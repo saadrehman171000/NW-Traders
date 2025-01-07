@@ -6,7 +6,7 @@ import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-gradient-to-b from-background to-muted">
+    <footer className="border-t glass-card">
       <div className="container py-8 md:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <motion.div 
@@ -15,9 +15,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-emerald-600 bg-clip-text text-transparent">
-              NW-Traders
-            </h3>
+            <h3 className="text-lg font-semibold text-gradient">NW-Traders</h3>
             <p className="text-sm text-muted-foreground">
               Your Trusted Partner in Industrial Automation
             </p>

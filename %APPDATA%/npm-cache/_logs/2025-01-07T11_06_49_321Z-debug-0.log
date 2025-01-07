@@ -1,0 +1,23 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v23.3.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\saadr\Desktop\NW-Traders\nw-traders\.npmrc
+5 silly config load:file:C:\Users\saadr\.npmrc
+6 silly config load:file:C:\Users\saadr\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm exec shadcn@latest add https://v0.dev/chat/b/b_PPORhG9qThf?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..MV4BBaSTgqLGIdMe.-0_zQLmn_BYmRekbsK9swqsNXStpvon5AswF5jLmlnwFcpD367SnDE19MWI.8zHu9EqHepUPYTfMQ2FvwQ
+8 verbose argv "exec" "--" "shadcn@latest" "add" "https://v0.dev/chat/b/b_PPORhG9qThf?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..MV4BBaSTgqLGIdMe.-0_zQLmn_BYmRekbsK9swqsNXStpvon5AswF5jLmlnwFcpD367SnDE19MWI.8zHu9EqHepUPYTfMQ2FvwQ"
+9 verbose logfile logs-max:10 dir:C:\Users\saadr\Desktop\NW-Traders\nw-traders\%APPDATA%\npm-cache\_logs\2025-01-07T11_06_49_321Z-
+10 verbose logfile C:\Users\saadr\Desktop\NW-Traders\nw-traders\%APPDATA%\npm-cache\_logs\2025-01-07T11_06_49_321Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+14 http fetch GET 200 https://registry.npmjs.org/shadcn 225ms (cache updated)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+17 verbose cwd C:\Users\saadr\Desktop\NW-Traders\nw-traders
+18 verbose os Windows_NT 10.0.22631
+19 verbose node v23.3.0
+20 verbose npm  v10.9.0
+21 verbose exit 0
+22 info ok
