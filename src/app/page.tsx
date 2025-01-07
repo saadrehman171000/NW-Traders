@@ -74,17 +74,17 @@ export default function Home() {
               {
                 title: "PLC Programming",
                 description: "Expert programming for industrial automation",
-                image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800&q=80"
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
               },
               {
                 title: "SCADA Design",
                 description: "Modern monitoring and control systems",
-                image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80"
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
               },
               {
                 title: "Automation Systems",
                 description: "End-to-end automation solutions",
-                image: "https://images.unsplash.com/photo-1581092787557-44d3d9889a69?w=800&q=80"
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
               }
             ].map((service, index) => (
               <motion.div
@@ -135,22 +135,22 @@ export default function Home() {
               {
                 title: "Industrial PLCs",
                 description: "High-performance controllers",
-                image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&q=80"
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80"
               },
               {
                 title: "HMI Systems",
                 description: "Interactive control interfaces",
-                image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=400&q=80"
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80"
               },
               {
                 title: "Sensor Systems",
                 description: "Precision monitoring devices",
-                image: "https://images.unsplash.com/photo-1581092787557-44d3d9889a69?w=400&q=80"
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80"
               },
               {
                 title: "Control Panels",
                 description: "Custom automation solutions",
-                image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&q=80"
+                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80"
               }
             ].map((product, index) => (
               <motion.div
