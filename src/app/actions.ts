@@ -1,5 +1,7 @@
 'use server'
 
+import nodemailer from 'nodemailer'
+
 type State = {
   success?: boolean;
   error?: {
@@ -9,6 +11,14 @@ type State = {
     message: string | null;
   };
 } | null;
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'saadrehman17100@gmail.com',
+    pass: process.env.EMAIL_PASSWORD // You'll need to set this up
+  }
+});
 
 export async function submitContactForm(prevState: State, formData: FormData) {
   const name = formData.get('name')
@@ -28,6 +38,33 @@ export async function submitContactForm(prevState: State, formData: FormData) {
     }
   }
 
-  return { success: true }
+  try {
+    await transporter.sendMail({
+      from: 'saadrehman17100@gmail.com',
+      to: 'saadrehman17100@gmail.com',
+      subject: `New Contact Form Submission from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `
+    });
+
+    return { success: true }
+  } catch (error) {
+    console.error('Email error:', error);
+    return { 
+      success: false, 
+      error: {
+        name: null,
+        email: null,
+        phone: null,
+        message: 'Failed to send message. Please try again.'
+      }
+    }
+  }
 }
 

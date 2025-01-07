@@ -70,57 +70,68 @@ export default function ContactPage() {
             >
               <Card>
                 <CardContent className="p-6">
-                  <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                  {state?.error?.name && (
-                    <p className="text-sm text-red-500 mt-1">{state.error.name}</p>
-                  )}
-                  {state?.error?.email && (
-                    <p className="text-sm text-red-500 mt-1">{state.error.email}</p>
-                  )}
-                  {state?.error?.phone && (
-                    <p className="text-sm text-red-500 mt-1">{state.error.phone}</p>
-                  )}
-                  {state?.error?.message && (
-                    <p className="text-sm text-red-500 mt-1">{state.error.message}</p>
-                  )}
-                  <form action={formAction} className="space-y-4">
-                    <div>
-                      <Input
-                        name="name"
-                        placeholder="Your Name"
-                        required
-                        aria-label="Your Name"
-                      />
+                  {state?.success ? (
+                    <div className="text-center py-8">
+                      <h3 className="text-2xl font-bold text-green-600 mb-2">Thank You!</h3>
+                      <p className="text-gray-600">
+                        Your message has been sent successfully. We&apos;ll get back to you soon.
+                      </p>
                     </div>
-                    <div>
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="Email Address"
-                        required
-                        aria-label="Email Address"
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        name="phone"
-                        type="tel"
-                        placeholder="Phone Number"
-                        required
-                        aria-label="Phone Number"
-                      />
-                    </div>
-                    <div>
-                      <Textarea
-                        name="message"
-                        placeholder="Your Message"
-                        required
-                        className="min-h-[150px]"
-                        aria-label="Your Message"
-                      />
-                    </div>
-                    <SubmitButton />
-                  </form>
+                  ) : (
+                    <>
+                      <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                      {state?.error?.name && (
+                        <p className="text-sm text-red-500 mt-1">{state.error.name}</p>
+                      )}
+                      {state?.error?.email && (
+                        <p className="text-sm text-red-500 mt-1">{state.error.email}</p>
+                      )}
+                      {state?.error?.phone && (
+                        <p className="text-sm text-red-500 mt-1">{state.error.phone}</p>
+                      )}
+                      {state?.error?.message && (
+                        <p className="text-sm text-red-500 mt-1">{state.error.message}</p>
+                      )}
+                      <form action={formAction} className="space-y-4">
+                        <div>
+                          <Input
+                            name="name"
+                            placeholder="Your Name"
+                            required
+                            aria-label="Your Name"
+                          />
+                        </div>
+                        <div>
+                          <Input
+                            name="email"
+                            type="email"
+                            placeholder="Email Address"
+                            required
+                            aria-label="Email Address"
+                          />
+                        </div>
+                        <div>
+                          <Input
+                            name="phone"
+                            type="tel"
+                            placeholder="Phone Number"
+                            required
+                            aria-label="Phone Number"
+                          />
+                        </div>
+                        <div>
+                          <Textarea
+                            name="message"
+                            placeholder="Your Message"
+                            required
+                            className="min-h-[150px]"
+                            aria-label="Your Message"
+                          />
+                        </div>
+                        <SubmitButton />
+                      </form>
+                    </>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
