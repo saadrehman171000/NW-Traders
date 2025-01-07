@@ -12,12 +12,6 @@ import {
 } from '@/components/ui/card'
 import { Lightbulb, Users, Shield, Award, Leaf, BarChart, Code, Settings, Clock, Zap } from 'lucide-react'
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-}
-
 export default function AboutPage() {
   const milestones = [
     { year: 1995, title: "Founded", description: "NW-Traders was established" },

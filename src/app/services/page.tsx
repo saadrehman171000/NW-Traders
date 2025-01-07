@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Check, ArrowRight } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Card,

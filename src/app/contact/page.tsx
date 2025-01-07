@@ -1,16 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { useFormState, useFormStatus } from 'react-dom'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Phone, Mail, Clock, MapPin, Loader2 } from 'lucide-react'
-import { useFormState, useFormStatus } from 'react-dom'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent } from '@/components/ui/card'
 import { contactDetails } from '@/lib/contact'
-import { submitContactForm } from '../actions'
+import { submitContactForm } from '@/app/actions'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -31,14 +30,6 @@ function SubmitButton() {
 
 export default function ContactPage() {
   const [state, formAction] = useFormState(submitContactForm, null)
-  const [formSubmitted, setFormSubmitted] = useState(false)
-
-  const handleSubmit = async (formData: FormData) => {
-    const result = await submitContactForm(formData)
-    if (result.success) {
-      setFormSubmitted(true)
-    }
-  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -62,7 +53,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </motion.div>
       </section>
@@ -80,69 +71,56 @@ export default function ContactPage() {
               <Card>
                 <CardContent className="p-6">
                   <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                  {formSubmitted ? (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="text-center py-8"
-                    >
-                      <h3 className="text-xl font-semibold text-primary mb-2">Thank You!</h3>
-                      <p className="text-muted-foreground">
-                        We've received your message and will get back to you soon.
-                      </p>
-                    </motion.div>
-                  ) : (
-                    <form action={handleSubmit} className="space-y-4">
-                      <div>
-                        <Input
-                          name="name"
-                          placeholder="Your Name"
-                          required
-                          aria-label="Your Name"
-                        />
-                        {state?.error?.name && (
-                          <p className="text-sm text-red-500 mt-1">{state.error.name}</p>
-                        )}
-                      </div>
-                      <div>
-                        <Input
-                          name="email"
-                          type="email"
-                          placeholder="Email Address"
-                          required
-                          aria-label="Email Address"
-                        />
-                        {state?.error?.email && (
-                          <p className="text-sm text-red-500 mt-1">{state.error.email}</p>
-                        )}
-                      </div>
-                      <div>
-                        <Input
-                          name="phone"
-                          type="tel"
-                          placeholder="Phone Number"
-                          required
-                          aria-label="Phone Number"
-                        />
-                        {state?.error?.phone && (
-                          <p className="text-sm text-red-500 mt-1">{state.error.phone}</p>
-                        )}
-                      </div>
-                      <div>
-                        <Textarea
-                          name="message"
-                          placeholder="Your Message"
-                          required
-                          className="min-h-[150px]"
-                          aria-label="Your Message"
-                        />
-                        {state?.error?.message && (
-                          <p className="text-sm text-red-500 mt-1">{state.error.message}</p>
-                        )}
-                      </div>
-                      <SubmitButton />
-                    </form>
+                  {state?.error?.name && (
+                    <p className="text-sm text-red-500 mt-1">{state.error.name}</p>
                   )}
+                  {state?.error?.email && (
+                    <p className="text-sm text-red-500 mt-1">{state.error.email}</p>
+                  )}
+                  {state?.error?.phone && (
+                    <p className="text-sm text-red-500 mt-1">{state.error.phone}</p>
+                  )}
+                  {state?.error?.message && (
+                    <p className="text-sm text-red-500 mt-1">{state.error.message}</p>
+                  )}
+                  <form action={formAction} className="space-y-4">
+                    <div>
+                      <Input
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                        aria-label="Your Name"
+                      />
+                    </div>
+                    <div>
+                      <Input
+                        name="email"
+                        type="email"
+                        placeholder="Email Address"
+                        required
+                        aria-label="Email Address"
+                      />
+                    </div>
+                    <div>
+                      <Input
+                        name="phone"
+                        type="tel"
+                        placeholder="Phone Number"
+                        required
+                        aria-label="Phone Number"
+                      />
+                    </div>
+                    <div>
+                      <Textarea
+                        name="message"
+                        placeholder="Your Message"
+                        required
+                        className="min-h-[150px]"
+                        aria-label="Your Message"
+                      />
+                    </div>
+                    <SubmitButton />
+                  </form>
                 </CardContent>
               </Card>
             </motion.div>
@@ -230,7 +208,7 @@ export default function ContactPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Industry?</h2>
             <p className="mb-8 text-white/90 max-w-2xl mx-auto">
-              Let's discuss how our automation solutions can help your business grow.
+              Let&apos;s discuss how our automation solutions can help your business grow.
             </p>
           </motion.div>
         </div>
